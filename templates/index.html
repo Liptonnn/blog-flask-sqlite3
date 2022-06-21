@@ -1,0 +1,27 @@
+{% extends "baza.html" %}
+
+{% block content %}
+<div class="startertemplate">
+<img src="https://pngimg.com/uploads/good_morning/good_morning_PNG15.png">
+{% if current_user.is_anonymous %}
+<div class="thing">
+<h2>Witaj nieznajomy!</h2><br>
+
+<h3>Szybki dostęp:</h3><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/blog"><b>Blog</b></a><br><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/login"><b>Zaloguj się</b></a><br><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/signup"><b>Zarejestruj się</b></a>
+</div>
+{% endif %}
+{% if current_user.is_authenticated %}
+<div class="thing">
+     <h2> Witaj {{ current_user.username }} !</h2><br>
+<h3>Szybki dostęp:</h3>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/blog"><b>Blog</b></a><br><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/dodaj-post"><b>Dodaj nowy post</b></a><br><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/usun-post"><b>Usuń post</b></a><br><br>
+<a class="btn" style="background-color: #008CBA;color: white;" href="/logout"><b>Wyloguj się</b></a>
+</div>
+{% endif %}
+ </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "baza.html" %}
+
+{% block content %}
+
+    <main role="main" class="container">
+  <h1><br><br><br>{{tytul}}<br></h1>
+<div class="thing">
+
+<p class="lead">Błąd {{blad}}</p>
+<a class="btn" style="background-color: #008CBA ;color: white;" href="/signup"><b>Powrót do rejestracji</b></a>
+<a class="btn" style="background-color: #008CBA ;color: white;" href="/login"><b>Powrót do logowania</b></a>
+<a class="btn" style="background-color: #008CBA ;color: white;" href="/"><b>Powrót do strony głównej</b></a>
+</div>
+
+
+
+    </main><!-- /.container -->
+
+  {% endblock %}

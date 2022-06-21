@@ -1,0 +1,28 @@
+
+{% extends "baza.html" %}
+
+
+
+{% block content %}
+<img src="https://www.ebusinessblog.co.uk/wp-content/uploads/2021/08/What-is-the-General-Structure-of-a-Blog-4-483x249.png">
+
+
+	{% for post in posty %}
+	  <div class="thing">
+	      ID # {{post["id"]}}
+	      <h3>  {{post["tytul"]}}</h3>
+	     <span class="badge badge-primary"><i>Dodał: <b>{{post["nick"]}}</b> - {{post["data"]}} </i></span>
+	  <br> {{post["tresc"]}}
+	  </div>
+	{% endfor %}
+
+       {% if current_user.is_authenticated %}
+       <bR>
+       <a class="btn" style="background-color: red;color: white;" href="/usun-post"><b>Usuń post!</b></a>
+       </form>
+
+       <a class="btn" style="background-color: green;color: white;" href="/dodaj-post"><b>Dodaj post!</b></a>
+        {% endif %}
+
+ </main><!-- /.container -->
+{% endblock %}
